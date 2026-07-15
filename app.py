@@ -28,7 +28,7 @@ MESSAGES_FILE = os.path.join(DATA_DIR, "messages.json")
 # ---------------------------------------------------------------------------
 
 PROFILE = {
-    "name": "Your Name",
+    "name": "Nihad Khan",
     "title": "Aspiring Data Analyst",
     "tagline": "Turning raw rows into decisions worth making.",
     "location": "Delhi, India",

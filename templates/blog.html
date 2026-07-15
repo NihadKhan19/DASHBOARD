@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Blog — {{ profile.name }}{% endblock %}
+
+{% block content %}
+<section class="section section--page">
+  <a href="/#about" class="back-link">← Back to portfolio</a>
+  <p class="cell-ref">E1</p>
+  <h1 class="section__title">Blog</h1>
+  <div class="post-list post-list--full">
+    {% for post in posts %}
+    <a href="{{ url_for('blog_post', slug=post.slug) }}" class="post-card">
+      <span class="post-card__date">{{ post.date }}</span>
+      <span class="post-card__title">{{ post.title }}</span>
+      <span class="post-card__excerpt">{{ post.excerpt }}</span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

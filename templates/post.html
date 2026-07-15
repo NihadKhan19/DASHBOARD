@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}{{ post.title }} — {{ profile.name }}{% endblock %}
+
+{% block content %}
+<section class="section section--page section--post">
+  <a href="{{ url_for('blog') }}" class="back-link">← Back to blog</a>
+  <p class="cell-ref">{{ post.date }}</p>
+  <h1 class="post__title">{{ post.title }}</h1>
+  <div class="post__body">
+    {% for para in post.body.split('\n\n') %}
+    <p>{{ para }}</p>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

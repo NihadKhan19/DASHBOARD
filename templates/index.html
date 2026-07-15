@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+
+{% block content %}
+<script>window.__profileWords = {{ profile.formula_words | tojson }};</script>
+
+<section class="hero">
+  <div class="grid-paper" aria-hidden="true"></div>
+
+  <div class="formula-bar">
+    <span class="formula-bar__fx">fx</span>
+    <span class="formula-bar__input" id="formulaInput">=CONCAT(</span>
+  </div>
+
+  <div class="hero__content">
+    <p class="hero__ref">A1</p>
+    <h1 class="hero__name">{{ profile.name }}</h1>
+    <p class="hero__title">{{ profile.title }}</p>
+    <p class="hero__tagline">{{ profile.tagline }}</p>
+    <div class="hero__actions">
+      <a href="#contact" class="btn btn--primary">Get in touch</a>
+      <a href="{{ profile.resume_url }}" class="btn btn--ghost">Download résumé</a>
+    </div>
+  </div>
+
+  <div class="hero__scroll" aria-hidden="true">
+    <span></span>
+    <p>scroll</p>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <p class="cell-ref">A1</p>
+  <h2 class="section__title">About</h2>
+  <div class="about-card">
+    <p>{{ profile.about }}</p>
+    <dl class="about-meta">
+      <div>
+        <dt>Location</dt>
+        <dd>{{ profile.location }}</dd>
+      </div>
+      <div>
+        <dt>Email</dt>
+        <dd><a href="mailto:{{ profile.email }}">{{ profile.email }}</a></dd>
+      </div>
+      <div>
+        <dt>Elsewhere</dt>
+        <dd>
+          <a href="{{ profile.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
+          &middot;
+          <a href="{{ profile.github }}" target="_blank" rel="noopener">GitHub</a>
+        </dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<section id="skills" class="section">
+  <p class="cell-ref">B1</p>
+  <h2 class="section__title">Skills</h2>
+  <div class="chart">
+    {% for skill in skills %}
+    <div class="chart__row">
+      <span class="chart__label">{{ skill.name }}</span>
+      <div class="chart__track">
+        <div class="chart__fill chart__fill--{{ loop.index0 % 3 }}" style="--level: {{ skill.level }}%;">
+          <span class="chart__value">{{ skill.level }}</span>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="projects" class="section">
+  <p class="cell-ref">C1</p>
+  <h2 class="section__title">Projects</h2>
+  <div class="sheet">
+    <div class="sheet__header-row">
+      <span>Cell</span>
+      <span>Project</span>
+      <span>Stack</span>
+      <span></span>
+    </div>
+    {% for project in projects %}
+    <div class="sheet__row">
+      <span class="sheet__cellref">{{ project.cell }}</span>
+      <span class="sheet__project">
+        <strong>{{ project.name }}</strong>
+        <span class="sheet__summary">{{ project.summary }}</span>
+      </span>
+      <span class="sheet__tags">
+        {% for tag in project.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+      </span>
+      <a href="{{ project.link }}" class="sheet__link" target="_blank" rel="noopener">View →</a>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="experience" class="section">
+  <p class="cell-ref">D1</p>
+  <h2 class="section__title">Experience</h2>
+  <ol class="ledger">
+    {% for item in experience %}
+    <li class="ledger__row">
+      <span class="ledger__period">{{ item.period }}</span>
+      <span class="ledger__body">
+        <strong>{{ item.role }}</strong>
+        <span class="ledger__org">{{ item.org }}</span>
+        <span class="ledger__detail">{{ item.detail }}</span>
+      </span>
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+
+<section id="blog-preview" class="section">
+  <p class="cell-ref">E1</p>
+  <h2 class="section__title">From the blog</h2>
+  <div class="post-list">
+    {% for post in posts %}
+    <a href="{{ url_for('blog_post', slug=post.slug) }}" class="post-card">
+      <span class="post-card__date">{{ post.date }}</span>
+      <span class="post-card__title">{{ post.title }}</span>
+      <span class="post-card__excerpt">{{ post.excerpt }}</span>
+    </a>
+    {% endfor %}
+  </div>
+  <a href="{{ url_for('blog') }}" class="link-more">Read all posts →</a>
+</section>
+
+<section id="contact" class="section">
+  <p class="cell-ref">F1</p>
+  <h2 class="section__title">Contact</h2>
+  <form class="contact-form" method="POST" action="{{ url_for('contact') }}">
+    <div class="contact-form__row">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div class="contact-form__row">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="contact-form__row">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+    </div>
+    <button type="submit" class="btn btn--primary">Send message</button>
+  </form>
+</section>
+
+<footer class="footer">
+  <p>&copy; {{ profile.name }}. Built with Flask.</p>
+</footer>
+
+{% endblock %}

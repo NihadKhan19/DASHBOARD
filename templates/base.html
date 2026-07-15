@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}{{ profile.name }} — {{ profile.title }}{% endblock %}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <div class="flash-stack">
+      {% for category, message in messages %}
+        <div class="flash flash--{{ category }}">{{ message }}</div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+
+<main>
+{% block content %}{% endblock %}
+</main>
+
+<nav class="sheet-tabs" aria-label="Section navigation">
+  <a href="/#about" class="sheet-tab"><span class="sheet-tab__ref">A</span>About</a>
+  <a href="/#skills" class="sheet-tab"><span class="sheet-tab__ref">B</span>Skills</a>
+  <a href="/#projects" class="sheet-tab"><span class="sheet-tab__ref">C</span>Projects</a>
+  <a href="/#experience" class="sheet-tab"><span class="sheet-tab__ref">D</span>Experience</a>
+  <a href="/blog" class="sheet-tab"><span class="sheet-tab__ref">E</span>Blog</a>
+  <a href="/#contact" class="sheet-tab"><span class="sheet-tab__ref">F</span>Contact</a>
+</nav>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

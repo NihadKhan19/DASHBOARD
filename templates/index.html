@@ -12,7 +12,6 @@
   </div>
 
   <div class="hero__content">
-    <p class="hero__ref">A1</p>
     <h1 class="hero__name">{{ profile.name }}</h1>
     <p class="hero__title">{{ profile.title }}</p>
     <p class="hero__tagline">{{ profile.tagline }}</p>
@@ -29,7 +28,6 @@
 </section>
 
 <section id="about" class="section">
-  <p class="cell-ref">A1</p>
   <h2 class="section__title">About</h2>
   <div class="about-card">
     <p>{{ profile.about }}</p>
@@ -55,7 +53,6 @@
 </section>
 
 <section id="skills" class="section">
-  <p class="cell-ref">B1</p>
   <h2 class="section__title">Skills</h2>
   <div class="chart">
     {% for skill in skills %}
@@ -72,7 +69,6 @@
 </section>
 
 <section id="projects" class="section">
-  <p class="cell-ref">C1</p>
   <h2 class="section__title">Projects</h2>
   <div class="sheet">
     <div class="sheet__header-row">
@@ -98,7 +94,6 @@
 </section>
 
 <section id="experience" class="section">
-  <p class="cell-ref">D1</p>
   <h2 class="section__title">Experience</h2>
   <ol class="ledger">
     {% for item in experience %}
@@ -115,7 +110,6 @@
 </section>
 
 <section id="blog-preview" class="section">
-  <p class="cell-ref">E1</p>
   <h2 class="section__title">From the blog</h2>
   <div class="post-list">
     {% for post in posts %}
@@ -130,7 +124,6 @@
 </section>
 
 <section id="contact" class="section">
-  <p class="cell-ref">F1</p>
   <h2 class="section__title">Contact</h2>
   <form class="contact-form" method="POST" action="{{ url_for('contact') }}">
     <div class="contact-form__row">

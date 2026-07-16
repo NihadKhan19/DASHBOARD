@@ -54,14 +54,12 @@ SKILLS = [
     {"name": "Data Visualization", "level": 75, "group": "Core"},
     {"name": "Power BI / Tableau", "level": 60, "group": "Tools"},
     {"name": "Statistics", "level": 65, "group": "Tools"},
-    {"name": "A/B Testing", "level": 50, "group": "Tools"},
     {"name": "Storytelling with Data", "level": 70, "group": "Tools"},
 ]
 
 PROJECTS = [
     {
         "id": "sales-dashboard",
-        "cell": "A1",
         "name": "Regional Sales Dashboard",
         "summary": "An interactive dashboard tracking revenue, churn, and rep performance across five regions.",
         "tags": ["SQL", "Power BI", "DAX"],
@@ -69,7 +67,6 @@ PROJECTS = [
     },
     {
         "id": "churn-model",
-        "cell": "A2",
         "name": "Customer Churn Analysis",
         "summary": "Explored a subscription dataset to find the three strongest predictors of churn and proposed retention actions.",
         "tags": ["Python", "pandas", "scikit-learn"],
@@ -77,7 +74,6 @@ PROJECTS = [
     },
     {
         "id": "survey-insights",
-        "cell": "A3",
         "name": "Survey Insights Report",
         "summary": "Cleaned and analyzed 2,000+ open survey responses, surfacing themes with text analysis and cohort breakdowns.",
         "tags": ["Excel", "NLP basics", "Storytelling"],
@@ -88,15 +84,15 @@ PROJECTS = [
 EXPERIENCE = [
     {
         "role": "Data Analytics Trainee",
-        "org": "Your Bootcamp / Program",
-        "period": "2025 — Present",
+        "org": "VOXO MEDIA",
+        "period": "2026 — Present",
         "detail": "Working through applied projects covering SQL joins, dashboarding, and statistical fundamentals.",
     },
     {
-        "role": "B.Sc / B.A in [Your Field]",
-        "org": "Your University",
-        "period": "2021 — 2025",
-        "detail": "Coursework in statistics, research methods, and applied computing.",
+        "role": "B.Tech [Information Technology]",
+        "org": "Amity University, Gwalior",
+        "period": "2024 — 2028",
+        "detail": "Pursuing a B.Tech in Information Technology with a strong foundation in Data Structures & Algorithms, Database Management Systems (DBMS), Operating Systems, Computer Networks, Object-Oriented Programming, Software Engineering, Data Analytics, Machine Learning, and Web Development. Actively building real-world projects using Python, SQL, Power BI, Excel, and Java while strengthening problem-solving and analytical skills.",
     },
 ]
 

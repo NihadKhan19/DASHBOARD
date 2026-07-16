@@ -31,11 +31,11 @@ PROFILE = {
     "name": "Nihad Khan",
     "title": "Aspiring Data Analyst",
     "tagline": "Turning raw rows into decisions worth making.",
-    "location": "Delhi, India",
-    "email": "you@example.com",
-    "linkedin": "https://linkedin.com/in/yourname",
-    "github": "https://github.com/yourname",
-    "resume_url": "/static/resume.pdf",  # drop your real resume.pdf into static/
+    "location": "Gwalior, India",
+    "email": "nihadk.2026@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/nihad-khan/",
+    "github": "https://www.linkedin.com/in/nihad-khan/",
+    "resume_url": "https://drive.google.com/file/d/1N8Sf3EtbBIs5qIdMuoK2ncJ2Pwb0qvoe/view?usp=sharing",  # drop your real resume.pdf into static/
     "about": (
         "I'm a data analyst in training — the kind of person who can't look at a "
         "messy spreadsheet without wanting to clean it up. My background is in "
